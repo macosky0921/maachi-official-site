@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>まあち｜整理収納アドバイザー</title>
+<meta name="description" content="整理収納アドバイザー・まあちの公式サイト。「10分しかない」が「10分もある」に変わる。くらしの工夫や発信のことを、毎日お届けしています。">
+
+<!-- OGP -->
+<meta property="og:title" content="まあち｜整理収納アドバイザー">
+<meta property="og:description" content="「10分しかない」が「10分もある」に変わる。くらしの工夫や発信のことを、毎日お届けしています。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/profile.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --pink: #F2B5A5;
+  --pink-light: #FAE8E3;
+  --pink-deep: #C97A65;
+  --sage: #7DAF97;
+  --sage-light: #C4D9CF;
+  --sage-deep: #3D6B58;
+  --cream: #FAF8F5;
+  --white: #FFFFFF;
+  --text: #2D3830;
+  --text-soft: #5A6B5F;
+  --shadow: 0 10px 40px rgba(61, 107, 88, 0.10);
+  --shadow-sm: 0 4px 18px rgba(61, 107, 88, 0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.9;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Noto Serif JP', serif; }
+
+a { color: inherit; }
+
+.wrap { width: 100%; max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(196, 217, 207, 0.5);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo { display: inline-flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.05; text-decoration: none; }
+.logo-main { font-family: 'Noto Serif JP', serif; font-size: 23px; letter-spacing: 0.12em; color: var(--pink-deep); }
+.logo-sub { font-size: 9.5px; letter-spacing: 0.34em; color: var(--text-soft); margin-top: 4px; }
+.nav { display: flex; gap: 22px; }
+.nav a {
+  font-size: 13px; letter-spacing: 0.08em; color: var(--text-soft);
+  text-decoration: none; transition: color .2s;
+}
+.nav a:hover { color: var(--pink-deep); }
+
+/* ===== Hero Slider ===== */
+.hero-slider {
+  position: relative; width: 100%;
+  height: clamp(460px, 76vh, 780px);
+  overflow: hidden; background: var(--text);
+}
+.hs-slides, .hs-slide { position: absolute; inset: 0; }
+.hs-slide {
+  background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.5s ease;
+  transform: scale(1.04);
+}
+.hs-slide.is-active { opacity: 1; animation: hsZoom 6s ease forwards; }
+@keyframes hsZoom { from { transform: scale(1.04); } to { transform: scale(1.12); } }
+.hero-slider::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(45,56,48,0.24) 0%, rgba(45,56,48,0.12) 45%, rgba(45,56,48,0.42) 100%);
+}
+.hs-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;
+  text-align: left; padding: clamp(88px, 19vh, 168px) clamp(24px, 7vw, 112px) 0; color: #fff;
+  background: radial-gradient(ellipse 52% 40% at 24% 32%, rgba(40,50,44,0.42), transparent 70%);
+}
+.hs-eyebrow {
+  font-size: 12.5px; letter-spacing: 0.34em; margin-bottom: 14px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+.hs-catch {
+  font-size: clamp(19px, 1.95vw, 24px); font-weight: 500; line-height: 1.7;
+  letter-spacing: 0.07em; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+  min-height: 3.4em; margin: 0;
+}
+.hs-cursor {
+  display: inline-block; width: 2px; height: 1.05em; background: #fff;
+  margin-left: 5px; vertical-align: -3px; animation: hsBlink 0.85s step-end infinite;
+}
+@keyframes hsBlink { 50% { opacity: 0; } }
+.hs-dots {
+  position: absolute; bottom: 22px; left: 0; right: 0; z-index: 3;
+  display: flex; gap: 11px; justify-content: center;
+}
+.hs-dot {
+  width: 9px; height: 9px; border-radius: 50%; border: none; cursor: pointer; padding: 0;
+  background: rgba(255,255,255,0.5); transition: background .3s, transform .3s;
+}
+.hs-dot.is-active { background: #fff; transform: scale(1.3); }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, var(--pink-light) 0%, var(--cream) 60%, #EAF3EE 100%);
+  padding: 72px 0 84px;
+}
+.hero-inner {
+  display: flex; align-items: center; gap: 56px;
+}
+.hero-text { flex: 1; }
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px; letter-spacing: 0.18em; color: var(--white);
+  background: var(--sage); padding: 5px 16px; border-radius: 20px;
+  margin-bottom: 22px;
+}
+.hero-name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 56px; font-weight: 400; letter-spacing: 0.1em;
+  color: var(--text); line-height: 1.1; margin-bottom: 10px;
+}
+.hero-role {
+  font-size: 14px; letter-spacing: 0.14em; color: var(--sage-deep);
+  margin-bottom: 30px;
+}
+.hero-catch {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 26px; font-weight: 500; line-height: 1.7;
+  color: var(--pink-deep); margin-bottom: 16px;
+}
+.hero-catch span { background: linear-gradient(transparent 62%, var(--pink-light) 62%); }
+.hero-catch2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 19px; font-weight: 400; line-height: 1.7;
+  color: var(--sage-deep); margin-bottom: 22px;
+}
+.hero-catch2 span { background: linear-gradient(transparent 62%, var(--sage-light) 62%); font-weight: 500; }
+.hero-lead {
+  font-size: 15px; color: var(--text-soft); max-width: 30em;
+}
+.hero-photo {
+  width: 344px; flex-shrink: 0;
+  position: relative;
+}
+.hero-photo img {
+  width: 100%; display: block;
+  clip-path: polygon(50% 0, 100% 27%, 100% 100%, 0 100%, 0 27%);
+  filter: drop-shadow(0 14px 30px rgba(61,107,88,0.22));
+}
+.hero-photo::after {
+  content: ""; position: absolute; right: -22px; bottom: 14px;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--sage-light); opacity: 0.45; z-index: -1;
+}
+.photo-credit {
+  position: absolute; right: 16px; bottom: 14px; z-index: 2;
+  font-size: 10px; letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.92); text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+}
+
+/* ===== Section base ===== */
+section { padding: 80px 0; }
+.section-label {
+  text-align: center; margin-bottom: 48px;
+}
+.section-label .en {
+  display: block; font-size: 12px; letter-spacing: 0.3em;
+  color: var(--sage); text-transform: uppercase; margin-bottom: 8px;
+}
+.section-label .ja {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px; font-weight: 400; letter-spacing: 0.1em; color: var(--text);
+}
+
+/* ===== About ===== */
+.about { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+}
+.about-card {
+  background: var(--cream); border-radius: 16px; padding: 30px 26px;
+  border: 1px solid rgba(196, 217, 207, 0.4);
+}
+.about-card .tag {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--white); background: var(--pink); padding: 4px 14px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.about-card.sage .tag { background: var(--sage); }
+.about-card p { font-size: 14.5px; color: var(--text); line-height: 1.85; }
+.about-card strong { color: var(--pink-deep); font-weight: 700; }
+.about-card.sage strong { color: var(--sage-deep); }
+.about-quali { list-style: none; margin: 0; }
+.about-quali li { position: relative; padding-left: 20px; font-size: 14.5px; color: var(--text); line-height: 1.6; margin-bottom: 10px; }
+.about-quali li:last-child { margin-bottom: 0; }
+.about-quali li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--pink); }
+.facts { list-style: none; }
+.facts li {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 9px 0; border-bottom: 1px dashed rgba(125,175,151,0.35);
+}
+.facts li:last-child { border-bottom: none; }
+.facts li span {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--sage-deep);
+  width: 56px; flex-shrink: 0;
+}
+.facts li strong { font-size: 15px; color: var(--text); font-weight: 700; }
+/* ===== Activities ===== */
+.activities { background: var(--cream); }
+.act-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.act-card {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--white); border-radius: 16px; padding: 24px 26px;
+  text-decoration: none; color: inherit;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s;
+}
+.act-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--pink-light);
+}
+.act-icon {
+  width: 50px; height: 50px; flex-shrink: 0; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; background: var(--white);
+  box-shadow: 0 2px 8px rgba(61,107,88,0.10);
+  overflow: hidden;
+}
+.act-icon img { width: 30px; height: 30px; object-fit: contain; display: block; }
+.act-icon-x svg { width: 22px; height: 22px; fill: #111; display: block; }
+.act-grid.small .act-icon-x svg { width: 20px; height: 20px; }
+.act-body { flex: 1; min-width: 0; }
+.act-title {
+  font-size: 16px; font-weight: 700; letter-spacing: 0.03em;
+  margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+}
+.act-title .arrow { font-size: 13px; color: var(--pink); transition: transform .2s; }
+.act-card:hover .act-title .arrow { transform: translate(3px, -3px); }
+.act-note { font-size: 11px; color: var(--sage-deep); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
+.act-desc { font-size: 13px; color: var(--text-soft); line-height: 1.7; }
+
+/* ===== SNS 大きく強調 ===== */
+.sns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 52px; }
+.sns-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--white); border-radius: 24px; padding: 38px 36px;
+  box-shadow: var(--shadow); border: 1px solid rgba(196,217,207,0.4);
+  position: relative; overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.sns-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, #F58529, #DD2A7B, #8134AF); }
+.sns-card.voicy::before { background: linear-gradient(90deg, #F6A94E, #E8842B); }
+.sns-card:hover { transform: translateY(-6px); box-shadow: 0 22px 54px rgba(61,107,88,0.20); }
+.sns-top { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.sns-logo { width: 62px; height: 62px; border-radius: 16px; background: var(--white);
+  box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+.sns-logo img { width: 40px; height: 40px; object-fit: contain; }
+.sns-name { font-size: 22px; font-weight: 700; letter-spacing: 0.04em; }
+.sns-handle { font-size: 12px; color: var(--text-soft); margin-top: 3px; }
+.sns-count { display: flex; align-items: baseline; gap: 9px; margin-bottom: 16px; }
+.sns-count .num { font-family: 'Noto Serif JP', serif; font-size: 52px; font-weight: 500; line-height: 1; color: var(--pink-deep); }
+.sns-count .num small { font-size: 26px; }
+.sns-count .unit { font-size: 14px; color: var(--text-soft); letter-spacing: 0.04em; }
+.sns-card.voicy .sns-count .num { color: #E8842B; }
+.sns-desc { font-size: 14px; color: var(--text); line-height: 1.85; margin-bottom: 24px; }
+.sns-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--pink-deep); }
+.sns-card.voicy .sns-link { color: #E8842B; }
+.sns-card:hover .sns-link { text-decoration: underline; }
+
+.sub-heading { text-align: center; font-family: 'Noto Serif JP', serif;
+  font-size: 18px; font-weight: 500; color: var(--sage-deep); letter-spacing: 0.1em; margin: 0 0 26px; }
+.act-grid.small { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.act-grid.small .act-card { padding: 20px 22px; }
+.act-grid.small .act-icon { width: 42px; height: 42px; }
+.act-grid.small .act-icon img { width: 26px; height: 26px; }
+.act-grid.small .act-title { font-size: 14.5px; }
+.act-grid.small .act-desc { font-size: 12px; }
+
+/* ===== 活動写真ギャラリー ===== */
+.gallery { background: var(--white); }
+.gallery-hint { text-align: center; font-size: 14px; color: var(--text-soft); margin: -24px auto 40px; max-width: 34em; line-height: 1.9; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 188px; gap: 12px; grid-auto-flow: dense;
+  max-width: 760px; margin: 0 auto; }
+.gallery-item { border-radius: 14px; overflow: hidden; position: relative;
+  box-shadow: var(--shadow-sm); transition: transform .22s ease, box-shadow .22s ease; }
+.gallery-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-cap { position: absolute; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(transparent, rgba(45,56,48,0.78)); color: #fff;
+  font-size: 12.5px; font-weight: 500; padding: 26px 14px 11px; letter-spacing: 0.03em; }
+
+/* ===== Instagram 最新の投稿 ===== */
+.sns-card.solo { margin-bottom: 30px; position: relative; padding-right: 250px; }
+.sns-card.insta.solo {
+  background: radial-gradient(circle at calc(100% - 140px) 50%, rgba(214,41,118,0.10), transparent 44%), var(--white);
+}
+.sns-card.voicy.solo {
+  background: radial-gradient(circle at calc(100% - 140px) 50%, rgba(232,132,43,0.12), transparent 44%), var(--white);
+}
+.sns-visual {
+  position: absolute; right: 44px; top: 50%; transform: translateY(-50%);
+  width: 188px; height: 188px; border-radius: 50%; background: var(--white);
+  display: flex; align-items: center; justify-content: center; z-index: 2;
+}
+.sns-card.insta.solo .sns-visual { box-shadow: 0 12px 32px rgba(214,41,118,0.24); }
+.sns-card.voicy.solo .sns-visual { box-shadow: 0 12px 32px rgba(232,132,43,0.24); }
+.sns-visual img { width: 88px; height: 88px; object-fit: contain; }
+.sns-visual.photo { overflow: hidden; }
+.sns-visual.photo img { width: 100%; height: 100%; object-fit: cover; }
+.insta-latest { max-width: 1080px; margin: 0 auto 54px; padding: 0 24px; }
+.insta-embeds { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.insta-embeds .instagram-media {
+  margin: 0 !important;
+  min-width: 300px !important;
+  width: 326px !important;
+  max-width: 340px !important;
+}
+.insta-more { text-align: center; margin-top: 26px; }
+
+/* ===== Voicy 活動の様子 ===== */
+.voicy-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; margin-bottom: 64px; }
+.voicy-photos figure { margin: 0; }
+.voicy-photos .vp-img {
+  border-radius: 14px; overflow: hidden; aspect-ratio: 3 / 2;
+  box-shadow: var(--shadow-sm);
+}
+.voicy-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+.voicy-photos figure:hover img { transform: scale(1.04); }
+.voicy-photos figcaption { text-align: center; font-size: 12px; color: var(--sage-deep); margin-top: 10px; letter-spacing: 0.03em; }
+
+/* Voicyカードの実績表記 */
+.sns-awards {
+  font-size: 12.5px; line-height: 1.75; color: var(--text); font-weight: 600;
+  margin-bottom: 16px; padding-left: 13px; border-left: 3px solid rgba(232,132,43,0.45);
+}
+
+/* ===== Media（掲載誌） ===== */
+.media { background: var(--cream); }
+.media-intro {
+  text-align: center; max-width: 34em; margin: -24px auto 44px;
+  font-size: 15px; color: var(--text-soft); line-height: 1.95;
+}
+.mag-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px 18px; }
+.mag-item { margin: 0; }
+.mag-photo {
+  aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden;
+  background: var(--white); box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.mag-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mag-item:hover .mag-photo { transform: translateY(-4px); box-shadow: var(--shadow); }
+.mag-item figcaption {
+  text-align: center; font-size: 11.5px; font-weight: 500;
+  color: var(--text); line-height: 1.5; margin-top: 10px;
+}
+.mag-item figcaption small { display: block; font-size: 10.5px; color: var(--sage-deep); font-weight: 400; margin-top: 2px; }
+
+/* ===== 企業タイアップ ===== */
+.tieup { background: var(--white); }
+.tieup-box {
+  max-width: 720px; margin: 0 auto; text-align: center;
+  background: linear-gradient(135deg, var(--pink-light) 0%, #FCF4EF 55%, #EAF3EE 100%);
+  border-radius: 22px; padding: 46px 40px;
+}
+.tieup-lead { font-size: 15px; color: var(--text); line-height: 1.95; margin-bottom: 30px; }
+.tieup-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--pink-deep); color: var(--white);
+  font-size: 14px; font-weight: 500; letter-spacing: 0.06em;
+  text-decoration: none; padding: 14px 30px; border-radius: 30px;
+  transition: background .2s, transform .2s;
+}
+.btn:hover { background: #b56753; transform: translateY(-2px); }
+.btn.sage { background: var(--sage-deep); }
+.btn.sage:hover { background: #325744; }
+.btn.small { padding: 11px 24px; font-size: 13px; }
+
+/* ===== Book ===== */
+.book { background: var(--white); }
+.goods { background: var(--cream); }
+.suchan-label {
+  text-align: center; font-size: 14px; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--sage-deep); margin: 40px 0 20px;
+}
+.suchan-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.suchan-photos figure { margin: 0; border-radius: 14px; overflow: hidden; aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-sm); background: var(--white); }
+.suchan-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+.suchan-photos figure:hover img { transform: scale(1.05); }
+.goods-past { margin-top: 132px; }
+.past-ended { font-size: 11px; font-weight: 400; color: var(--text-soft); }
+.past-item { margin-top: 56px; }
+.past-name { font-size: 18px; font-weight: 500; color: var(--text); text-align: center; margin-bottom: 20px; letter-spacing: 0.04em; }
+.past-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 620px; margin: 0 auto; }
+.past-photos figure { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-sm); background: var(--white); }
+.past-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+.past-photos figure:hover img { transform: scale(1.05); }
+.book-badge {
+  align-self: flex-start;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--white);
+  background: var(--pink); padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+}
+.book-badge.sage { background: var(--sage); }
+.book-badge.gold { background: #D8A24A; }
+.book-badge.gray { background: #A7B0A9; }
+
+/* --- 最新刊（書影つき・大きく目立たせる） --- */
+.book-featured {
+  display: flex; align-items: center; gap: 48px;
+  background: linear-gradient(135deg, var(--pink-light) 0%, #FCF4EF 55%, #EAF3EE 100%);
+  border-radius: 24px; padding: 48px 52px; margin-bottom: 36px;
+}
+.book-featured .cover-img {
+  flex-shrink: 0; width: 240px; align-self: stretch;
+  display: flex; align-items: center;
+}
+.book-featured .cover-img img {
+  width: 100%; display: block; border-radius: 6px;
+  box-shadow: 0 18px 44px rgba(61,107,88,0.28);
+  transform: rotate(-2deg); transition: transform .3s ease;
+}
+.book-featured:hover .cover-img img { transform: rotate(0deg) scale(1.02); }
+.book-featured .f-text { flex: 1; }
+.book-featured .f-title {
+  font-family: 'Noto Serif JP', serif; font-size: 28px; font-weight: 500;
+  line-height: 1.5; color: var(--text); margin-bottom: 14px;
+}
+.book-featured .f-desc { font-size: 14.5px; color: var(--text-soft); line-height: 1.85; margin-bottom: 26px; }
+.f-highlight { display: inline; color: var(--pink-deep); font-weight: 400; background: linear-gradient(transparent 60%, var(--pink-light) 60%); }
+.book-featured .f-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Amazonレビュー評価サマリー */
+.book-review {
+  margin-top: 26px; max-width: 380px;
+  background: rgba(255,255,255,0.6); border: 1px solid rgba(196,217,207,0.5);
+  border-radius: 14px; padding: 18px 20px;
+}
+.br-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 14px; }
+.br-stars { position: relative; display: inline-block; font-size: 19px; line-height: 1; letter-spacing: 2px; }
+.br-stars::before { content: "★★★★★"; color: #E3DED6; }
+.br-stars::after {
+  content: "★★★★★"; color: #F2B33D; position: absolute; left: 0; top: 0;
+  width: var(--rate, 100%); overflow: hidden; white-space: nowrap;
+}
+.br-score { font-family: 'Noto Serif JP', serif; font-size: 26px; font-weight: 500; color: var(--pink-deep); line-height: 1; }
+.br-score small { font-size: 14px; color: var(--text-soft); }
+.br-count { font-size: 12px; color: var(--text-soft); }
+.br-asof { font-size: 10.5px; color: var(--text-soft); opacity: 0.75; }
+.br-bars { list-style: none; margin: 0 0 14px; display: grid; gap: 6px; }
+.br-bars li { display: grid; grid-template-columns: 44px 1fr 38px; align-items: center; gap: 10px; font-size: 11.5px; color: var(--text-soft); }
+.br-bars i { display: block; height: 8px; border-radius: 5px; background: #EDE7E0; overflow: hidden; }
+.br-bars i b { display: block; height: 100%; background: #F2B33D; border-radius: 5px; }
+.br-bars em { font-style: normal; text-align: right; }
+.br-link { display: inline-block; font-size: 12.5px; font-weight: 600; color: var(--pink-deep); text-decoration: none; }
+.br-link:hover { text-decoration: underline; }
+
+/* --- これまでの著書（横型・小さめの実績カード） --- */
+.book-archive { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 44px; }
+.arch-card {
+  display: flex; gap: 16px; align-items: center;
+  width: 340px; max-width: 100%;
+  background: var(--cream); border: 1px solid rgba(196,217,207,0.4);
+  border-radius: 14px; padding: 16px 18px; text-decoration: none; color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.arch-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.arch-cover { flex-shrink: 0; width: 70px; }
+.arch-cover img { width: 100%; display: block; border-radius: 4px; box-shadow: 0 4px 12px rgba(61,107,88,0.18); }
+.arch-body { flex: 1; min-width: 0; }
+.arch-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--white); background: var(--pink); padding: 3px 10px; border-radius: 20px; margin-bottom: 7px;
+}
+.arch-badge.sage { background: var(--sage); }
+.arch-name { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+.arch-desc { font-size: 11.5px; color: var(--text-soft); line-height: 1.6; margin-bottom: 8px; }
+.arch-link { font-size: 12px; font-weight: 600; color: var(--pink-deep); }
+.arch-card:hover .arch-link { text-decoration: underline; }
+
+/* --- 絵本・片付け（書影つき・featuredより小さく） --- */
+.book-secondary { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; align-items: flex-start; }
+.book-card {
+  background: var(--cream); border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(196,217,207,0.4);
+  display: flex; flex-direction: column; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.book-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.book-card .cover-photo { width: 100%; line-height: 0; background: var(--white); }
+.book-card .cover-photo img { width: 100%; display: block; }
+.book-card.ehon { width: 216px; }
+.book-card.mini { width: 150px; }
+.book-card.kindle { width: 150px; }
+.cover-text {
+  aspect-ratio: 5/7; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  padding: 18px 14px; text-align: center;
+  background: linear-gradient(150deg, #3D6B58 0%, #2D4F40 100%);
+  position: relative;
+}
+.cover-text::before { content: ""; position: absolute; left:0; top:0; bottom:0; width:6px; background: rgba(0,0,0,0.18); }
+.cover-text .kindle-tag { font-size: 10px; letter-spacing: 0.14em; color: var(--sage-light); }
+.cover-text .ct-title { font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 500; line-height: 1.5; color: #fff; }
+.book-info { padding: 18px 18px 20px; display: flex; flex-direction: column; flex: 1; }
+.book-name { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 7px; color: var(--text); }
+.book-desc { font-size: 12px; color: var(--text-soft); line-height: 1.7; margin-bottom: 15px; flex: 1; }
+.book-card.mini .book-name { font-size: 13px; }
+.book-card.mini .book-desc { font-size: 11.5px; }
+.book-info .btn { align-self: flex-start; margin-top: auto; }
+.book-info .btn.tiny { padding: 9px 18px; font-size: 12px; }
+
+/* ===== Reviews / Lesson ===== */
+.reviews { background: linear-gradient(180deg, var(--pink-light) 0%, var(--cream) 100%); }
+.lesson-intro {
+  text-align: center; max-width: 36em; margin: -24px auto 46px;
+  font-size: 15px; color: var(--text-soft); line-height: 1.95;
+}
+.reviews-subhead {
+  text-align: center; font-family: 'Noto Serif JP', serif;
+  font-size: 23px; font-weight: 500; color: var(--pink-deep);
+  letter-spacing: 0.1em; margin-bottom: 30px;
+}
+.reviews-subhead::after {
+  content: ""; display: block; width: 46px; height: 2px;
+  background: var(--pink); margin: 12px auto 0;
+}
+.review-stats {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-bottom: 42px;
+}
+.stat {
+  background: var(--white); border-radius: 18px; padding: 28px 36px; min-width: 200px;
+  text-align: center; box-shadow: var(--shadow-sm);
+}
+.stat .stars { color: #F2B33D; font-size: 22px; letter-spacing: 3px; margin-bottom: 8px; }
+.stat .num {
+  font-family: 'Noto Serif JP', serif; font-weight: 500;
+  font-size: 46px; line-height: 1; color: var(--pink-deep);
+}
+.stat .num small { font-size: 22px; }
+.stat .label { font-size: 13px; color: var(--text-soft); margin-top: 10px; letter-spacing: 0.04em; }
+.review-embed {
+  background: var(--white); border-radius: 20px; padding: 14px;
+  box-shadow: var(--shadow); max-width: 760px; margin: 0 auto;
+}
+.review-hint { text-align: center; font-size: 13px; color: var(--sage-deep); margin: 0 0 14px; letter-spacing: 0.04em; }
+.review-embed iframe { width: 100%; height: 680px; border: 0; border-radius: 12px; display: block; background: var(--cream); }
+.review-more { text-align: center; margin-top: 26px; }
+
+/* ===== CTA ===== */
+.cta {
+  background: var(--sage-deep);
+  color: var(--white); text-align: center;
+}
+.cta h2 {
+  font-family: 'Noto Serif JP', serif; font-size: 30px; font-weight: 400;
+  letter-spacing: 0.08em; margin-bottom: 18px;
+}
+.cta p { font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 34px; }
+.cta .btn { background: var(--white); color: var(--sage-deep); }
+.cta .btn:hover { background: var(--pink-light); }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--text); color: rgba(255,255,255,0.7);
+  text-align: center; padding: 48px 24px;
+}
+.footer .fname {
+  font-family: 'Noto Serif JP', serif; font-size: 20px; letter-spacing: 0.18em;
+  color: var(--white); margin-bottom: 18px;
+}
+.footer-links { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin-bottom: 22px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.8); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--pink); }
+.footer .copy { font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); }
+
+/* ===== Responsive ===== */
+@media (max-width: 820px) {
+  .nav { display: none; }
+  .hero-inner { flex-direction: column-reverse; text-align: center; gap: 36px; }
+  .hero-photo { width: 240px; }
+  .hero-name { font-size: 44px; }
+  .hero-catch { font-size: 22px; }
+  .hero-lead { margin: 0 auto; }
+  .about-grid { grid-template-columns: 1fr; }
+  .act-grid { grid-template-columns: 1fr; }
+  .sns-grid { grid-template-columns: 1fr; gap: 20px; }
+  .sns-card.solo { padding-right: 36px; }
+  .sns-card.insta.solo, .sns-card.voicy.solo { background: var(--white); }
+  .sns-visual { display: none; }
+  .voicy-photos { grid-template-columns: 1fr; gap: 14px; }
+  .suchan-photos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .past-photos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .act-grid.small { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .mag-grid { grid-template-columns: repeat(3, 1fr); gap: 22px 14px; }
+  .book-featured { flex-direction: column; text-align: center; gap: 28px; padding: 36px 26px; }
+  .book-featured .cover-img { width: 180px; margin: 0 auto; }
+  .book-featured .f-text { display: flex; flex-direction: column; align-items: center; }
+  .book-featured .f-title { font-size: 24px; }
+  .book-secondary { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+}
+@media (max-width: 480px) {
+  .hero-name { font-size: 38px; }
+  .section-label .ja { font-size: 24px; }
+  .mag-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo"><span class="logo-main">maachi</span><span class="logo-sub">公式サイト</span></a>
+    <nav class="nav">
+      <a href="#about">プロフィール</a>
+      <a href="#activities">発信活動</a>
+      <a href="#book">著書</a>
+      <a href="#goods">オリジナル商品</a>
+      <a href="#gallery">活動の様子</a>
+      <a href="#media">メディア掲載</a>
+      <a href="#reviews">お客様の声</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero Slider ===== -->
+<section class="hero-slider" id="top">
+  <div class="hs-slides">
+    <div class="hs-slide is-active" style="background-image:url('images/hero-slide-1.jpg')"></div>
+    <div class="hs-slide" style="background-image:url('images/hero-slide-2.jpg')"></div>
+    <div class="hs-slide" style="background-image:url('images/hero-slide-3.jpg')"></div>
+  </div>
+  <div class="hs-overlay">
+    <p class="hs-eyebrow">maachi</p>
+    <h2 class="hs-catch serif"><span class="hs-type"></span><span class="hs-cursor" aria-hidden="true"></span></h2>
+  </div>
+  <div class="hs-dots">
+    <button class="hs-dot is-active" type="button" aria-label="1枚目"></button>
+    <button class="hs-dot" type="button" aria-label="2枚目"></button>
+    <button class="hs-dot" type="button" aria-label="3枚目"></button>
+  </div>
+</section>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">整理収納アドバイザー</span>
+      <h1 class="hero-name serif">まあち</h1>
+      <p class="hero-catch serif"><span>くらしを整えると<br>自分のことが好きになる。</span></p>
+      <p class="hero-catch2 serif"><span>「10分しかない」が「10分もある」に変わる。</span></p>
+      <p class="hero-lead">お片付けは、ただくらしが整うだけじゃない。<br>時間、マインド、いや、人生までも変えてしまう力がある。</p>
+    </div>
+    <div class="hero-photo">
+      <img src="images/profile.jpeg" alt="まあち プロフィール写真">
+      <p class="photo-credit">© Masako Nakagawa</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Profile</span>
+      <span class="ja serif">わたしについて</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="tag">プロフィール</span>
+        <p><strong>1982年</strong>生まれ、<strong>大阪府</strong>在住。同い年の夫と、小学6年生（2026年現在）の息子との<strong>3人家族</strong>。長所は、フォロワーさんからは「親しみやすいけどバキバキ系」と言われている。</p>
+      </div>
+      <div class="about-card sage">
+        <span class="tag">経歴</span>
+        <p>広告代理店に事務職として<strong>13年間</strong>勤めたあと、<strong>2020年</strong>フリーランスに転身。整理収納を学び発信に出会ったことで<strong>人生が180度変わった</strong>。</p>
+      </div>
+      <div class="about-card">
+        <span class="tag">資格</span>
+        <ul class="about-quali">
+          <li>整理収納アドバイザー1級</li>
+          <li>時短家事コーディネーター basic</li>
+          <li>アロマ検定1級</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Activities ===== -->
+<section class="activities" id="activities">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">SNS</span>
+      <span class="ja serif">発信中のSNS</span>
+    </div>
+
+    <!-- Instagram カード（単独・大きく） -->
+    <a class="sns-card insta solo" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">
+      <div class="sns-top">
+        <div class="sns-logo"><img src="images/instagram.png" alt="Instagram"></div>
+        <div>
+          <div class="sns-name">Instagram</div>
+          <div class="sns-handle">@maachi.k.k_home</div>
+        </div>
+      </div>
+      <div class="sns-count"><span class="num">24<small>万</small></span><span class="unit">フォロワー以上</span></div>
+      <p class="sns-desc">くらしのメインアカウント。「散らかってもいい、10分で片付く家を目指す」コンセプトに発信中。</p>
+      <span class="sns-link">フォローする ↗</span>
+      <div class="sns-visual photo"><img src="images/sns-insta-photo.jpg" alt="まあち"></div>
+    </a>
+  </div>
+
+  <!-- Instagram 投稿（見出しなし） -->
+  <div class="insta-latest">
+    <div class="insta-embeds">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DP5P9UbCddO/?utm_source=ig_embed" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DP5P9UbCddO/">Instagramで見る</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTwc0eWidF_/?utm_source=ig_embed" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DTwc0eWidF_/">Instagramで見る</a>
+      </blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DU-mx41CfgM/?utm_source=ig_embed" data-instgrm-version="14">
+        <a href="https://www.instagram.com/p/DU-mx41CfgM/">Instagramで見る</a>
+      </blockquote>
+    </div>
+    <p class="insta-more"><a class="btn small" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">Instagramをもっと見る ↗</a></p>
+  </div>
+
+  <div class="wrap">
+    <!-- Voicy カード（単独） -->
+    <a class="sns-card voicy solo" href="https://voicy.jp/channel/2249" target="_blank" rel="noopener">
+      <div class="sns-top">
+        <div class="sns-logo"><img src="images/voicy.png" alt="Voicy"></div>
+        <div>
+          <div class="sns-name">Voicy</div>
+          <div class="sns-handle">毎朝 4:50 配信中</div>
+        </div>
+      </div>
+      <div class="sns-count"><span class="num">2.7<small>万</small></span><span class="unit">リスナー以上</span></div>
+      <p class="sns-awards">2022・2023年度 Voicy 暮らしジャンル1位選出<br>2022・2023年 Voicy FES ／ 2025年 Voicy Fan Festa 登壇</p>
+      <p class="sns-desc">お片付けの話だけでなく、気持ちまでも整って前向きになれるようなお話をお届けしています。</p>
+      <span class="sns-link">Voicyで聴く ↗</span>
+      <div class="sns-visual photo"><img src="images/sns-voicy-photo.jpg" alt="まあち"></div>
+    </a>
+
+    <!-- Voicy 活動の様子 -->
+    <div class="voicy-photos">
+      <figure>
+        <div class="vp-img"><img src="images/voicy-photo-1.jpg" alt="Voicy FES '23 集合写真" loading="lazy"></div>
+        <figcaption>Voicy FES '23</figcaption>
+      </figure>
+      <figure>
+        <div class="vp-img"><img src="images/voicy-photo-2.jpg" alt="Voicy Fan Festa '25" loading="lazy"></div>
+        <figcaption>Voicy Fan Festa '25</figcaption>
+      </figure>
+      <figure>
+        <div class="vp-img"><img src="images/voicy-photo-3.jpg" alt="Voicy Fan Festa '25 会場" loading="lazy"></div>
+        <figcaption>Voicy Fan Festa '25</figcaption>
+      </figure>
+    </div>
+
+    <!-- そのほかの発信（控えめに） -->
+    <h3 class="sub-heading">そのほかの発信</h3>
+    <div class="act-grid small">
+      <a class="act-card" href="https://note.com/maachikkhome/" target="_blank" rel="noopener">
+        <div class="act-icon"><img src="images/note.png" alt="note"></div>
+        <div class="act-body">
+          <div class="act-title">note <span class="arrow">↗</span></div>
+          <div class="act-desc">何気ない日々の中で「残しておきたい」と感じたコラムやエッセイなどを綴っています。</div>
+        </div>
+      </a>
+
+      <a class="act-card" href="https://room.rakuten.co.jp/room_b1039962ac/items" target="_blank" rel="noopener">
+        <div class="act-icon"><img src="images/rakuten-room.png" alt="楽天ROOM"></div>
+        <div class="act-body">
+          <div class="act-title">楽天ROOM <span class="arrow">↗</span></div>
+          <div class="act-desc">実際に使ってよかったもの、お気に入りのアイテムを集めています。</div>
+        </div>
+      </a>
+
+      <a class="act-card" href="https://x.com/maachi_home" target="_blank" rel="noopener">
+        <div class="act-icon act-icon-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+        <div class="act-body">
+          <div class="act-title">X <span class="arrow">↗</span></div>
+          <div class="act-desc">音声配信やVoicy関連の話が多めです。</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Book ===== -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Books</span>
+      <span class="ja serif">著書</span>
+    </div>
+    <!-- 最新刊（書影つき・大きく） -->
+    <div class="book-featured">
+      <a class="cover-img" href="https://amzn.to/4r4K3tc" target="_blank" rel="noopener">
+        <img src="images/book-jikan.jpg" alt="1日10分 わたしを整える時間術 書影">
+      </a>
+      <div class="f-text">
+        <span class="book-badge">最新刊</span>
+        <div class="f-title serif">1日10分<br>わたしを整える時間術</div>
+        <p class="f-desc">「自分のことは、いつも後回し」。そんな毎日でも大丈夫。1日たった10分から、くらしと自分を整えていくヒントをまとめました。読み終える頃には「10分しかない」が「10分もある」に変わり、自分のことが少し好きになれているはずです。</p>
+        <div class="f-btns">
+          <a class="btn" href="https://amzn.to/4r4K3tc" target="_blank" rel="noopener">Amazonで見る ↗</a>
+          <a class="btn sage" href="https://room.rakuten.co.jp/room_b1039962ac/1700343401873208" target="_blank" rel="noopener">楽天ROOMで見る ↗</a>
+        </div>
+
+        <div class="book-review">
+          <div class="br-head">
+            <span class="br-stars" style="--rate:94%" aria-hidden="true"></span>
+            <span class="br-score">4.7<small>/5</small></span>
+            <span class="br-count">Amazon 62件の評価<span class="br-asof">（2026年7月時点）</span></span>
+          </div>
+          <ul class="br-bars">
+            <li><span>星5つ</span><i><b style="width:80%"></b></i><em>80%</em></li>
+            <li><span>星4つ</span><i><b style="width:10%"></b></i><em>10%</em></li>
+            <li><span>星3つ</span><i><b style="width:10%"></b></i><em>10%</em></li>
+            <li><span>星2つ</span><i><b style="width:0%"></b></i><em>0%</em></li>
+            <li><span>星1つ</span><i><b style="width:0%"></b></i><em>0%</em></li>
+          </ul>
+          <a class="br-link" href="https://amzn.to/4r4K3tc" target="_blank" rel="noopener">Amazonのカスタマーレビューを見る ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-archive">
+      <a class="arch-card" href="https://amzn.asia/d/04GNkAAh" target="_blank" rel="noopener">
+        <div class="arch-cover"><img src="images/book-katazuke.jpg" alt="片付けは思考が9割！ 書影"></div>
+        <div class="arch-body">
+          <span class="arch-badge">ムック本</span>
+          <div class="arch-name">片付けは思考が9割！</div>
+          <p class="arch-desc">まあち初書籍はムック本でした。</p>
+          <span class="arch-link">Amazonで見る ↗</span>
+        </div>
+      </a>
+
+      <a class="arch-card" href="#" target="_blank" rel="noopener">
+        <div class="arch-cover"><img src="images/book-seiri.jpg" alt="整理思考法 表紙"></div>
+        <div class="arch-body">
+          <span class="arch-badge sage">Kindle電子書籍</span>
+          <div class="arch-name">整理思考法</div>
+          <p class="arch-desc">Kindle Unlimitedに登録していると0円で読めます。</p>
+          <span class="arch-link">Kindleで見る ↗</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Original Goods ===== -->
+<section class="goods" id="goods">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Original</span>
+      <span class="ja serif">オリジナル商品</span>
+    </div>
+
+    <!-- 絵本 すーちゃんのおうち -->
+    <div class="book-featured">
+      <a class="cover-img" href="https://happypiece.stores.jp/items/679cbc6a45c8a900bbaaff04" target="_blank" rel="noopener">
+        <img src="images/book-suchan.jpg" alt="絵本「すーちゃんのおうち」表紙">
+      </a>
+      <div class="f-text">
+        <span class="book-badge gold">オリジナル絵本</span>
+        <div class="f-title serif">すーちゃんのおうち</div>
+        <p class="f-desc">整理収納アドバイザー・まあちが贈る、親子で楽しむお片付けの絵本（さく：まあち／え：のりcorin）。大切なコアラのぬいぐるみ「すーちゃん」と5歳の女の子めいちゃんが主人公のストーリーを通して、子どもたちが自然とお片付けの楽しさを学べる1冊です。<strong class="f-highlight">読後にお片付けを自ら始める子どもたちが続出！</strong></p>
+        <div class="f-btns">
+          <a class="btn" href="https://happypiece.stores.jp/items/679cbc6a45c8a900bbaaff04" target="_blank" rel="noopener">ご購入はこちら ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- すーちゃんのおうち 中身をご紹介 -->
+    <div class="suchan-photos">
+      <figure><img src="images/suchan-1.jpg" alt="絵本「すーちゃんのおうち」表紙" loading="lazy"></figure>
+      <figure><img src="images/suchan-2.jpg" alt="くらしの中で絵本を読む様子" loading="lazy"></figure>
+      <figure><img src="images/suchan-3.jpg" alt="おもちゃで散らかったお部屋のシーン" loading="lazy"></figure>
+      <figure><img src="images/suchan-4.jpg" alt="いる・いらないを仕分けるシーン" loading="lazy"></figure>
+      <figure><img src="images/suchan-5.jpg" alt="すーちゃんのおうちを描くシーン" loading="lazy"></figure>
+      <figure><img src="images/suchan-6.jpg" alt="お部屋が片付いて嬉しいシーン" loading="lazy"></figure>
+    </div>
+
+    <!-- 過去の販売商品：コーヒー・クッキー -->
+    <div class="goods-past">
+      <p class="suchan-label">過去に販売した商品<span class="past-ended">（現在は販売を終了）</span></p>
+
+      <div class="past-item">
+        <h4 class="past-name serif">オリジナルドリップコーヒー</h4>
+        <div class="past-photos">
+          <figure><img src="images/coffee-1.jpg" alt="オリジナルドリップコーヒー Cozy time" loading="lazy"></figure>
+          <figure><img src="images/coffee-2.jpg" alt="オリジナルドリップコーヒー Decaf time" loading="lazy"></figure>
+        </div>
+      </div>
+
+      <div class="past-item">
+        <h4 class="past-name serif">オリジナルクッキー缶</h4>
+        <div class="past-photos">
+          <figure><img src="images/cookie-1.jpg" alt="オリジナルクッキー缶（コアラのクッキー）" loading="lazy"></figure>
+          <figure><img src="images/cookie-3.jpg" alt="クッキー缶のギフトパッケージ" loading="lazy"></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Gallery ===== -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Gallery</span>
+      <span class="ja serif">活動の様子</span>
+    </div>
+    <p class="gallery-hint">セミナー・ワークショップ登壇、メディア出演など。</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/gal-ev3.jpg" alt="セミナー講演" loading="lazy"></div>
+      <div class="gallery-item wide"><img src="images/gal-seminar1.jpg" alt="セミナー登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev2.jpg" alt="トークイベント登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev1.jpg" alt="PRイベント" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev5.jpg" alt="テレビ番組の撮影" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev4.jpg" alt="Voicyイベント登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev7.jpg" alt="整理収納セミナー" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-tv.jpg" alt="テレビ出演" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 企業タイアップ ===== -->
+<section class="tieup" id="tieup">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Collaboration</span>
+      <span class="ja serif">企業タイアップ</span>
+    </div>
+    <div class="tieup-box">
+      <p class="tieup-lead">InstagramやVoicyでのタイアップ投稿・PR、コラボ商品、メディア出演などを承っています。InstagramのDMや下記から、どうぞお気軽にご相談ください。</p>
+      <div class="tieup-btns">
+        <a class="btn" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">InstagramのDM ↗</a>
+        <a class="btn sage" href="#contact">お仕事のご依頼はこちら ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Media（掲載誌） ===== -->
+<section class="media" id="media">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Media</span>
+      <span class="ja serif">メディア掲載</span>
+    </div>
+    <p class="media-intro">これまでに掲載していただいた雑誌の一部をご紹介します。</p>
+    <div class="mag-grid">
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-12.jpg?v=2" alt="リンネル 2026年7月号" loading="lazy"></div>
+        <figcaption>リンネル<small>2026年7月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-esse-2026-05.jpg" alt="ESSE 2026年5月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2026年5月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-10.jpg?v=2" alt="LEE 2025年1・2月号" loading="lazy"></div>
+        <figcaption>LEE（リー）<small>2025年1・2月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-php-2024-09.jpg" alt="PHPくらしラク〜る♪ 2024年9月号" loading="lazy"></div>
+        <figcaption>PHPくらしラク〜る♪<small>2024年9月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-08.jpg?v=2" alt="LEE 2023年6月号" loading="lazy"></div>
+        <figcaption>LEE（リー）<small>2023年6月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-07.jpg?v=2" alt="ESSE 2023年1月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2023年1月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-05.jpg?v=2" alt="ESSE 2022年6月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2022年6月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-04.jpg?v=2" alt="クロワッサン 2022年3/25号" loading="lazy"></div>
+        <figcaption>クロワッサン<small>2022年3/25号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-02.jpg?v=2" alt="無印良品・イケア・ニトリの マネできる！収納アイデア" loading="lazy"></div>
+        <figcaption>マネできる！収納アイデア<small>2021年6月発行</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-01.jpg?v=2" alt="ESSE 2021年1月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2021年1月号</small></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Online Lesson</span>
+      <span class="ja serif">暮らしと発信のオンライン個別レッスン</span>
+    </div>
+    <p class="lesson-intro">整理収納や発信のお悩みに、マンツーマンでじっくり向き合うオンラインの個別レッスンです。「何から始めたらいいの？」という方も、どうぞ気軽に。</p>
+    <h3 class="reviews-subhead">お客様の声</h3>
+    <div class="review-stats">
+      <div class="stat">
+        <div class="stars">★★★★★</div>
+        <div class="num">99<small>%超え</small></div>
+        <div class="label">満足度（★5評価）</div>
+      </div>
+      <div class="stat">
+        <div class="num">100<small>件以上</small></div>
+        <div class="label">オンラインレッスンのレビュー</div>
+      </div>
+    </div>
+    <p class="review-hint">↓ 実際にレッスンを受けてくださった方の「感想レポート」です（スクロールして読めます）</p>
+    <div class="review-embed">
+      <iframe src="https://mosh.jp/maachi/home" title="まあちのオンラインレッスン 感想レポート" loading="lazy"></iframe>
+    </div>
+    <div class="review-more">
+      <a class="btn sage" href="https://mosh.jp/maachi/home" target="_blank" rel="noopener">MOSHで感想レポートをすべて見る ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / Contact ===== -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2 class="serif">お仕事のご依頼について</h2>
+    <p>お仕事のご依頼は、InstagramのDM、またはこちらのEメールにお願いします。<br>タイアップ・PR、メディア出演、執筆などお気軽にご連絡ください。</p>
+    <div class="cta-btns">
+      <a class="btn" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">InstagramのDM ↗</a>
+      <a class="btn" href="mailto:leciel_petit_bonheur@yahoo.co.jp">leciel_petit_bonheur@yahoo.co.jp ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="fname serif">まあち</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://voicy.jp/channel/2249" target="_blank" rel="noopener">Voicy</a>
+    <a href="https://note.com/maachikkhome/" target="_blank" rel="noopener">note</a>
+    <a href="https://room.rakuten.co.jp/room_b1039962ac/items" target="_blank" rel="noopener">楽天ROOM</a>
+    <a href="https://x.com/maachi_home" target="_blank" rel="noopener">X</a>
+    <a href="https://mosh.jp/maachi/home" target="_blank" rel="noopener">レッスン</a>
+    <a href="#contact">お仕事のご依頼</a>
+  </div>
+  <div class="copy">© 2026 まあち. All rights reserved.</div>
+</footer>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.hs-slide');
+  var dots = document.querySelectorAll('.hs-dot');
+  if (slides.length < 2) return;
+  var i = 0, timer;
+  function go(n){
+    slides[i].classList.remove('is-active');
+    if (dots[i]) dots[i].classList.remove('is-active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-active');
+    if (dots[i]) dots[i].classList.add('is-active');
+  }
+  function start(){ timer = setInterval(function(){ go(i+1); }, 5000); }
+  dots.forEach(function(d, idx){
+    d.addEventListener('click', function(){ go(idx); clearInterval(timer); start(); });
+  });
+  start();
+
+  // タイピング風に本文を表示
+  var typeEl = document.querySelector('.hs-type');
+  var cursorEl = document.querySelector('.hs-cursor');
+  if (typeEl) {
+    var full = 'くらしを整えると、\n自分のことが好きになる。';
+    var n = 0;
+    function type(){
+      typeEl.innerHTML = full.slice(0, n).replace(/\n/g, '<br>');
+      if (n < full.length) { n++; setTimeout(type, 150); }
+      else if (cursorEl) { setTimeout(function(){ cursorEl.style.display = 'none'; }, 700); }
+    }
+    setTimeout(type, 500);
+  }
+})();
+</script>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+
+</body>
+</html>
