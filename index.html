@@ -66,12 +66,18 @@ a { color: inherit; }
 .logo { display: inline-flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.05; text-decoration: none; }
 .logo-main { font-family: 'Noto Serif JP', serif; font-size: 23px; letter-spacing: 0.12em; color: var(--pink-deep); }
 .logo-sub { font-size: 9.5px; letter-spacing: 0.34em; color: var(--text-soft); margin-top: 4px; }
-.nav { display: flex; gap: 22px; }
+.nav { display: flex; align-items: center; gap: 18px; }
 .nav a {
   font-size: 13px; letter-spacing: 0.08em; color: var(--text-soft);
   text-decoration: none; transition: color .2s;
 }
 .nav a:hover { color: var(--pink-deep); }
+.nav-cta {
+  background: var(--pink-deep); color: var(--white) !important;
+  padding: 8px 16px; border-radius: 20px; font-weight: 500;
+  transition: background .2s;
+}
+.nav-cta:hover { background: #b56753; }
 
 /* ===== Hero Slider ===== */
 .hero-slider {
@@ -620,7 +626,8 @@ section { padding: 80px 0; }
 
 /* ===== Responsive ===== */
 @media (max-width: 820px) {
-  .nav { display: none; }
+  .nav a:not(.nav-cta) { display: none; }
+  .nav-cta { padding: 7px 14px; font-size: 12.5px; }
   .hero-inner { flex-direction: column-reverse; text-align: center; gap: 36px; }
   .hero-photo { width: 240px; }
   .hero-name { font-size: 44px; }
@@ -663,10 +670,11 @@ section { padding: 80px 0; }
       <a href="#about">プロフィール</a>
       <a href="#activities">発信活動</a>
       <a href="#book">著書</a>
-      <a href="#goods">オリジナル商品</a>
-      <a href="#gallery">活動の様子</a>
       <a href="#media">メディア掲載</a>
+      <a href="#gallery">活動の様子</a>
+      <a href="#goods">オリジナル商品</a>
       <a href="#reviews">お客様の声</a>
+      <a href="#contact" class="nav-cta">お仕事のご依頼</a>
     </nav>
   </div>
 </header>
@@ -899,6 +907,80 @@ section { padding: 80px 0; }
   </div>
 </section>
 
+<!-- ===== Media（掲載誌） ===== -->
+<section class="media" id="media">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Media</span>
+      <span class="ja serif">メディア掲載</span>
+    </div>
+    <p class="media-intro">これまでに掲載していただいた雑誌の一部をご紹介します。</p>
+    <div class="mag-grid">
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-12.jpg?v=2" alt="リンネル 2026年7月号" loading="lazy"></div>
+        <figcaption>リンネル<small>2026年7月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-esse-2026-05.jpg" alt="ESSE 2026年5月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2026年5月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-10.jpg?v=2" alt="LEE 2025年1・2月号" loading="lazy"></div>
+        <figcaption>LEE（リー）<small>2025年1・2月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-php-2024-09.jpg" alt="PHPくらしラク〜る♪ 2024年9月号" loading="lazy"></div>
+        <figcaption>PHPくらしラク〜る♪<small>2024年9月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-08.jpg?v=2" alt="LEE 2023年6月号" loading="lazy"></div>
+        <figcaption>LEE（リー）<small>2023年6月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-07.jpg?v=2" alt="ESSE 2023年1月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2023年1月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-05.jpg?v=2" alt="ESSE 2022年6月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2022年6月号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-04.jpg?v=2" alt="クロワッサン 2022年3/25号" loading="lazy"></div>
+        <figcaption>クロワッサン<small>2022年3/25号</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-02.jpg?v=2" alt="無印良品・イケア・ニトリの マネできる！収納アイデア" loading="lazy"></div>
+        <figcaption>マネできる！収納アイデア<small>2021年6月発行</small></figcaption>
+      </figure>
+      <figure class="mag-item">
+        <div class="mag-photo"><img src="images/mag-01.jpg?v=2" alt="ESSE 2021年1月号" loading="lazy"></div>
+        <figcaption>ESSE（エッセ）<small>2021年1月号</small></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Gallery ===== -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Gallery</span>
+      <span class="ja serif">活動の様子</span>
+    </div>
+    <p class="gallery-hint">セミナー・ワークショップ登壇、メディア出演など。</p>
+    <div class="gallery-grid">
+      <div class="gallery-item sp-hide"><img src="images/gal-ev3.jpg" alt="セミナー講演" loading="lazy"></div>
+      <div class="gallery-item wide"><img src="images/gal-seminar1.jpg" alt="セミナー登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev2.jpg" alt="トークイベント登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev1.jpg" alt="PRイベント" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev5.jpg" alt="テレビ番組の撮影" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev4.jpg" alt="Voicyイベント登壇" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-ev7.jpg" alt="整理収納セミナー" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gal-tv.jpg" alt="テレビ出演" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== Original Goods ===== -->
 <section class="goods" id="goods">
   <div class="wrap">
@@ -955,97 +1037,6 @@ section { padding: 80px 0; }
   </div>
 </section>
 
-<!-- ===== Gallery ===== -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="section-label">
-      <span class="en">Gallery</span>
-      <span class="ja serif">活動の様子</span>
-    </div>
-    <p class="gallery-hint">セミナー・ワークショップ登壇、メディア出演など。</p>
-    <div class="gallery-grid">
-      <div class="gallery-item sp-hide"><img src="images/gal-ev3.jpg" alt="セミナー講演" loading="lazy"></div>
-      <div class="gallery-item wide"><img src="images/gal-seminar1.jpg" alt="セミナー登壇" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-ev2.jpg" alt="トークイベント登壇" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-ev1.jpg" alt="PRイベント" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-ev5.jpg" alt="テレビ番組の撮影" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-ev4.jpg" alt="Voicyイベント登壇" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-ev7.jpg" alt="整理収納セミナー" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gal-tv.jpg" alt="テレビ出演" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 企業タイアップ ===== -->
-<section class="tieup" id="tieup">
-  <div class="wrap">
-    <div class="section-label">
-      <span class="en">Collaboration</span>
-      <span class="ja serif">企業タイアップ</span>
-    </div>
-    <div class="tieup-box">
-      <p class="tieup-lead">InstagramやVoicyでのタイアップ投稿・PR、コラボ商品、メディア出演などを承っています。InstagramのDMや下記から、どうぞお気軽にご相談ください。</p>
-      <div class="tieup-btns">
-        <a class="btn" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">InstagramのDM ↗</a>
-        <a class="btn sage" href="#contact">お仕事のご依頼はこちら ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Media（掲載誌） ===== -->
-<section class="media" id="media">
-  <div class="wrap">
-    <div class="section-label">
-      <span class="en">Media</span>
-      <span class="ja serif">メディア掲載</span>
-    </div>
-    <p class="media-intro">これまでに掲載していただいた雑誌の一部をご紹介します。</p>
-    <div class="mag-grid">
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-12.jpg?v=2" alt="リンネル 2026年7月号" loading="lazy"></div>
-        <figcaption>リンネル<small>2026年7月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-esse-2026-05.jpg" alt="ESSE 2026年5月号" loading="lazy"></div>
-        <figcaption>ESSE（エッセ）<small>2026年5月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-10.jpg?v=2" alt="LEE 2025年1・2月号" loading="lazy"></div>
-        <figcaption>LEE（リー）<small>2025年1・2月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-php-2024-09.jpg" alt="PHPくらしラク〜る♪ 2024年9月号" loading="lazy"></div>
-        <figcaption>PHPくらしラク〜る♪<small>2024年9月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-08.jpg?v=2" alt="LEE 2023年6月号" loading="lazy"></div>
-        <figcaption>LEE（リー）<small>2023年6月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-07.jpg?v=2" alt="ESSE 2023年1月号" loading="lazy"></div>
-        <figcaption>ESSE（エッセ）<small>2023年1月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-05.jpg?v=2" alt="ESSE 2022年6月号" loading="lazy"></div>
-        <figcaption>ESSE（エッセ）<small>2022年6月号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-04.jpg?v=2" alt="クロワッサン 2022年3/25号" loading="lazy"></div>
-        <figcaption>クロワッサン<small>2022年3/25号</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-02.jpg?v=2" alt="無印良品・イケア・ニトリの マネできる！収納アイデア" loading="lazy"></div>
-        <figcaption>マネできる！収納アイデア<small>2021年6月発行</small></figcaption>
-      </figure>
-      <figure class="mag-item">
-        <div class="mag-photo"><img src="images/mag-01.jpg?v=2" alt="ESSE 2021年1月号" loading="lazy"></div>
-        <figcaption>ESSE（エッセ）<small>2021年1月号</small></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
 <!-- ===== Reviews ===== -->
 <section class="reviews" id="reviews">
   <div class="wrap">
@@ -1072,6 +1063,23 @@ section { padding: 80px 0; }
     </div>
     <div class="review-more">
       <a class="btn sage" href="https://mosh.jp/maachi/home" target="_blank" rel="noopener">MOSHで感想レポートをすべて見る ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 企業タイアップ ===== -->
+<section class="tieup" id="tieup">
+  <div class="wrap">
+    <div class="section-label">
+      <span class="en">Collaboration</span>
+      <span class="ja serif">企業タイアップ</span>
+    </div>
+    <div class="tieup-box">
+      <p class="tieup-lead">InstagramやVoicyでのタイアップ投稿・PR、コラボ商品、メディア出演などを承っています。InstagramのDMや下記から、どうぞお気軽にご相談ください。</p>
+      <div class="tieup-btns">
+        <a class="btn" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">InstagramのDM ↗</a>
+        <a class="btn sage" href="#contact">お仕事のご依頼はこちら ↗</a>
+      </div>
     </div>
   </div>
 </section>
