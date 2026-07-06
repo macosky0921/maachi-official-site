@@ -609,6 +609,13 @@ section { padding: 80px 0; }
 .footer-links a:hover { color: var(--pink); }
 .footer .copy { font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); }
 
+/* スマホだけの改行・表示（PCでは非表示） */
+.sp-br, .sp-only { display: none; }
+@media (max-width: 600px) {
+  .sp-br { display: inline; }
+  .sp-only { display: inline; }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 820px) {
   .nav { display: none; }
@@ -686,8 +693,8 @@ section { padding: 80px 0; }
       <span class="hero-eyebrow">整理収納アドバイザー</span>
       <h1 class="hero-name serif">まあち</h1>
       <p class="hero-catch serif"><span>くらしを整えると<br>自分のことが好きになる。</span></p>
-      <p class="hero-catch2 serif"><span>「10分しかない」が「10分もある」に変わる。</span></p>
-      <p class="hero-lead">お片付けは、ただくらしが整うだけじゃない。<br>時間、マインド、いや、人生までも変えてしまう力がある。</p>
+      <p class="hero-catch2 serif"><span>「10分しかない」が<br class="sp-br">「10分もある」に変わる。</span></p>
+      <p class="hero-lead">お片付けは、ただくらしが整うだけじゃない。<br>時間、マインド、いや、人生までも<br class="sp-br">変えてしまう力がある。</p>
     </div>
     <div class="hero-photo">
       <img src="images/profile2.jpg" alt="まあち プロフィール写真">
@@ -741,7 +748,7 @@ section { padding: 80px 0; }
         </div>
       </div>
       <div class="sns-count"><span class="num">24<small>万</small></span><span class="unit">フォロワー以上</span></div>
-      <p class="sns-desc">くらしのメインアカウント。「散らかってもいい、10分で片付く家を目指す」コンセプトに発信中。</p>
+      <p class="sns-desc">くらしのメインアカウント。<br class="sp-br">「散らかってもいい、10分で片付く家を目指す」<span class="sp-only">を</span><br class="sp-br">コンセプトに発信中。</p>
       <span class="sns-link">フォローする ↗</span>
       <div class="sns-visual photo"><img src="images/sns-insta-photo.jpg" alt="まあち"></div>
     </a>
