@@ -609,11 +609,13 @@ section { padding: 80px 0; }
 .footer-links a:hover { color: var(--pink); }
 .footer .copy { font-size: 11px; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); }
 
-/* スマホだけの改行・表示（PCでは非表示） */
+/* スマホだけ／PCだけの改行・表示 */
 .sp-br, .sp-only { display: none; }
+.pc-only { display: inline; }
 @media (max-width: 600px) {
   .sp-br { display: inline; }
   .sp-only { display: inline; }
+  .pc-only { display: none; }
 }
 
 /* ===== Responsive ===== */
@@ -748,7 +750,7 @@ section { padding: 80px 0; }
         </div>
       </div>
       <div class="sns-count"><span class="num">24<small>万</small></span><span class="unit">フォロワー以上</span></div>
-      <p class="sns-desc">くらしのメインアカウント。<br class="sp-br">「散らかってもいい、10分で片付く家を目指す」<span class="sp-only">を</span><br class="sp-br">コンセプトに発信中。</p>
+      <p class="sns-desc">くらしのメインアカウント。<br class="sp-br">「散らかってもいい、10分で片付く家を目指す」<span class="sp-only">を</span>コンセプトに発信中。</p>
       <span class="sns-link">フォローする ↗</span>
       <div class="sns-visual photo"><img src="images/sns-insta-photo.jpg" alt="まあち"></div>
     </a>
@@ -781,7 +783,7 @@ section { padding: 80px 0; }
         </div>
       </div>
       <div class="sns-count"><span class="num">2.7<small>万</small></span><span class="unit">リスナー以上</span></div>
-      <p class="sns-awards">2022・2023年度 Voicy 暮らしジャンル1位選出<br>2022・2023年 Voicy FES ／ 2025年 Voicy Fan Festa 登壇</p>
+      <p class="sns-awards">2022・2023年度 <br class="sp-br">Voicy 暮らしジャンル1位選出<br>2022・2023年 Voicy FES<span class="pc-only"> ／ </span><br class="sp-br">2025年 Voicy Fan Festa 登壇</p>
       <p class="sns-desc">お片付けの話だけでなく、気持ちまでも整って前向きになれるようなお話をお届けしています。</p>
       <span class="sns-link">Voicyで聴く ↗</span>
       <div class="sns-visual photo"><img src="images/sns-voicy-photo.jpg" alt="まあち"></div>
@@ -848,7 +850,7 @@ section { padding: 80px 0; }
       <div class="f-text">
         <span class="book-badge">最新刊</span>
         <div class="f-title serif">1日10分<br>わたしを整える時間術</div>
-        <p class="f-desc">「自分のことは、いつも後回し」。そんな毎日でも大丈夫。1日たった10分から、くらしと自分を整えていくヒントをまとめました。読み終える頃には「10分しかない」が「10分もある」に変わり、自分のことが少し好きになれているはずです。</p>
+        <p class="f-desc">「自分のことは、いつも後回し」。そんな毎日でも大丈夫。1日たった10分から、くらしと自分を整えていくヒントをまとめました。<br class="sp-br">読み終える頃には「10分しかない」が「10分もある」に変わり、自分のことが少し好きになれているはずです。</p>
         <div class="f-btns">
           <a class="btn" href="https://amzn.to/4r4K3tc" target="_blank" rel="noopener">Amazonで見る ↗</a>
           <a class="btn sage" href="https://room.rakuten.co.jp/room_b1039962ac/1700343401873208" target="_blank" rel="noopener">楽天ROOMで見る ↗</a>
@@ -1080,7 +1082,7 @@ section { padding: 80px 0; }
     <p>お仕事のご依頼は、InstagramのDM、またはこちらのEメールにお願いします。<br>タイアップ・PR、メディア出演、執筆などお気軽にご連絡ください。</p>
     <div class="cta-btns">
       <a class="btn" href="https://www.instagram.com/maachi.k.k_home/" target="_blank" rel="noopener">InstagramのDM ↗</a>
-      <a class="btn" href="mailto:leciel_petit_bonheur@yahoo.co.jp">leciel_petit_bonheur@yahoo.co.jp ↗</a>
+      <a class="btn" href="mailto:leciel_petit_bonheur@yahoo.co.jp">お仕事のご依頼はこちら ↗</a>
     </div>
   </div>
 </section>
